@@ -1,12 +1,9 @@
 {
   "people": [
     {
-      "name": "Lilly",
-      "ics_url": "https://example.com/lilly.ics"
-    },
-    {
-      "name": "Mom",
-      "ics_url": "https://example.com/mom.ics"
+      "name": "Kim",
+      "ics_url": "https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVjtqn5MQ6g3l27XoJOeSqPm"
     }
+    
   ]
 }
