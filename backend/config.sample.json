@@ -2,8 +2,8 @@
   "people": [
     {
       "name": "Kim",
-      "ics_url": "https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVjtqn5MQ6g3l27XoJOeSqPm"
-      "ics_url": "webcal://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVg3G1PIqIqsYGt-2BHVLNONfJtSsDIEfMDXZbFaT58KwvuqcdByUxUiQXWIKrnZp-A"
+      "ics_url": ["https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVjtqn5MQ6g3l27XoJOeSqPm",
+                  "webcal://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVg3G1PIqIqsYGt-2BHVLNONfJtSsDIEfMDXZbFaT58KwvuqcdByUxUiQXWIKrnZp-A"]
     }
     
   ]
