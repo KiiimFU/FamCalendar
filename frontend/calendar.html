@@ -32,12 +32,13 @@
     document.addEventListener('DOMContentLoaded', function() {
       const calendarEl = document.getElementById('calendar');
       const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: window.innerWidth < 600 ? 'listWeek' : 'dayGridMonth',
-        headerToolbar: {
+      initialView: window.innerWidth < 600 ? 'timeGridWeek' : 'dayGridMonth',
+      headerToolbar: {
         left: 'prev,next today',
         center: 'title',
-        right: window.innerWidth < 600 ? '' : 'dayGridMonth,timeGridWeek,listWeek'
-        },
+        right: 'dayGridMonth,timeGridWeek,listWeek'
+      },
+
 
         navLinks: true,
         weekNumbers: false,
