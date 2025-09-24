@@ -3,8 +3,15 @@
     {
       "name": "Kim",
       "ics_urls": ["https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVjtqn5MQ6g3l27XoJOeSqPm",
-                  "https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVg3G1PIqIqsYGt-2BHVLNONfJtSsDIEfMDXZbFaT58KwvuqcdByUxUiQXWIKrnZp-A"]
+                  "https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVg3G1PIqIqsYGt-2BHVLNONfJtSsDIEfMDXZbFaT58KwvuqcdByUxUiQXWIKrnZp-A"，
+                  "https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVgRTq5zUxakJAlA8PHHHXAxFjFScMWb0Q6b31jlOycbG1QI2f0wl3oo51B13pHvhco"]
+            
+    },
+    {
+      "name": "Esther",
+      "ics_urls":["https://p103-caldav.icloud.com/published/2/MTE1MDkxNjIwODkxMTUwOTRRIqD6YQXdBBvI_wtZXVgRTq5zUxakJAlA8PHHHXAxFjFScMWb0Q6b31jlOycbG1QI2f0wl3oo51B13pHvhco"]
     }
+    
     
   ]
 }
