@@ -65,3 +65,32 @@ ul#people li a {
   background: var(--accent);
   border: none;
 }
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  header h1 {
+    font-size: 16px;
+  }
+  .fc .fc-toolbar-title {
+    font-size: 16px;
+  }
+  .fc .fc-button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  .fc-event {
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 6px;
+  }
+  .fc-daygrid-event {
+    white-space: normal;
+  }
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
