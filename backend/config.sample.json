@@ -1,0 +1,12 @@
+{
+  "people": [
+    {
+      "name": "Lilly",
+      "ics_url": "https://example.com/lilly.ics"
+    },
+    {
+      "name": "Mom",
+      "ics_url": "https://example.com/mom.ics"
+    }
+  ]
+}

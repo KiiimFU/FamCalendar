@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Family Calendar</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Family & Friends</h1>
+  </header>
+
+  <main>
+    <ul id="people"></ul>
+  </main>
+
+  <footer>
+    <p>Tip: On iPhone Safari → Share → Add to Home Screen to install.</p>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+    async function loadPeople() {
+      const ul = document.getElementById('people');
+      try {
+        const res = await fetch('/api/people');
+        const data = await res.json();
+        data.people.forEach(p => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = '/calendar.html?name=' + encodeURIComponent(p.name);
+          a.textContent = p.name;
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+      } catch (e) {
+        const li = document.createElement('li');
+        li.textContent = 'Failed to load people list.';
+        ul.appendChild(li);
+      }
+    }
+    loadPeople();
+  </script>
+</body>
+</html>

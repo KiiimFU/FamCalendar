@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendar</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/main.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header>
+    <a class="back" href="/">← Back</a>
+    <h1 id="title">Calendar</h1>
+  </header>
+
+  <main>
+    <div id="calendar"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+
+    const params = new URLSearchParams(location.search);
+    const name = params.get('name') || 'Unknown';
+    document.getElementById('title').textContent = name + "'s Calendar";
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendarEl = document.getElementById('calendar');
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+        navLinks: true,
+        weekNumbers: false,
+        events: async (info, success, failure) => {
+          try {
+            const url = `/api/calendar/${encodeURIComponent(name)}?start=${info.startStr}&end=${info.endStr}`;
+            const res = await fetch(url);
+            const data = await res.json();
+            if (data.events) {
+              success(data.events);
+            } else {
+              failure(new Error('No events payload'));
+            }
+          } catch (e) {
+            failure(e);
+          }
+        }
+      });
+      calendar.render();
+    });
+  </script>
+</body>
+</html>
