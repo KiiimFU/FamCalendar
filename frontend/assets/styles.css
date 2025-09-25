@@ -94,3 +94,10 @@ header {
   top: 0;
   z-index: 1000;
 }
+/* Style the day headers in list view */
+.fc .fc-list-day-cushion {
+  background: #ffffff !important;  /* white background */
+  color: #11162a !important;       /* dark navy text */
+  font-weight: 700;
+}
+
