@@ -96,8 +96,8 @@ header {
 }
 /* Style the day headers in list view */
 .fc .fc-list-day-cushion {
-  background: #ffffff !important;  /* white background */
-  color: #11162a !important;       /* dark navy text */
+  background: #ffffff;  /* white background */
+  color: #e6e9f2;       /* dark navy text */
   font-weight: 700;
 }
 
