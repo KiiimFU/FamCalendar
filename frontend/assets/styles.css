@@ -147,3 +147,15 @@ ul#people li a {
     white-space: normal;
   }
 }
+
+/* Make the weekday name inside the white bar dark */
+.fc .fc-list-day-cushion .fc-list-day-text {
+  color: #0b3d91 !important;   /* dark navy */
+  font-weight: 700 !important;
+}
+
+/* Also fix the date text on the right */
+.fc .fc-list-day-cushion .fc-list-day-side-text {
+  color: #0b3d91 !important;
+  font-weight: 600 !important;
+}
