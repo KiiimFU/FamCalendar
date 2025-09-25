@@ -1,11 +1,16 @@
 :root {
-  --bg: #0b1020;
-  --card: #11162a;
-  --text: #e6e9f2;
-  --accent: #0ea5e9;
+  --bg: #0b1020;       /* overall background */
+  --card: #11162a;     /* card-like containers */
+  --text: #e6e9f2;     /* main text color */
+  --accent: #0ea5e9;   /* buttons, highlights */
+  --daybar-bg: #ffffff;/* list view day header background */
+  --daybar-text: #0b3d91; /* navy blue for day header text */
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
@@ -15,10 +20,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* ----- Header ----- */
 header, footer {
   padding: 16px;
   background: #0e1428;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 header h1 {
   margin: 0;
@@ -29,10 +36,19 @@ header .back {
   text-decoration: none;
   margin-right: 8px;
 }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ----- Main Content ----- */
 main {
   padding: 16px;
   flex: 1;
 }
+
+/* ----- People grid ----- */
 ul#people {
   list-style: none;
   padding: 0;
@@ -43,7 +59,7 @@ ul#people {
 }
 ul#people li {
   background: var(--card);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   padding: 14px;
 }
@@ -53,19 +69,58 @@ ul#people li a {
   display: block;
   font-weight: 600;
 }
+
+/* ----- Calendar Container ----- */
 #calendar {
   background: var(--card);
   border-radius: 12px;
   padding: 8px;
 }
-.fc-theme-standard .fc-scrollgrid, .fc-theme-standard td, .fc-theme-standard th {
-  border-color: rgba(255,255,255,0.08);
+
+/* ----- FullCalendar overrides ----- */
+.fc-theme-standard .fc-scrollgrid,
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border-color: rgba(255, 255, 255, 0.08);
 }
+
 .fc-theme-standard .fc-button {
   background: var(--accent);
   border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
 }
-/* Mobile tweaks */
+
+.fc .fc-toolbar-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ----- List view day headers ----- */
+.fc .fc-list-day-cushion {
+  background: var(--daybar-bg) !important;   /* white */
+  color: var(--daybar-text) !important;     /* navy */
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.fc .fc-list-day {
+  border: none !important;
+}
+
+/* ----- List view events ----- */
+.fc .fc-list-event {
+  background: var(--card);
+  border-radius: 8px;
+  margin: 2px 0;
+  padding: 4px;
+}
+.fc .fc-list-event-dot {
+  border-color: var(--accent) !important;
+}
+
+/* ----- Mobile tweaks ----- */
 @media (max-width: 600px) {
   body {
     font-size: 14px;
@@ -89,15 +144,3 @@ ul#people li a {
     white-space: normal;
   }
 }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-/* Style the day headers in list view */
-.fc .fc-list-day-cushion {
-  background: #ffffff;  /* white background */
-  color: #e6e9f2;       /* dark navy text */
-  font-weight: 700;
-}
-
