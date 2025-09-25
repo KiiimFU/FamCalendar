@@ -1,10 +1,8 @@
 :root {
-  --bg: #0b1020;       /* overall background */
-  --card: #11162a;     /* card-like containers */
-  --text: #e6e9f2;     /* main text color */
-  --accent: #0ea5e9;   /* buttons, highlights */
-  --daybar-bg: #ffffff;/* list view day header background */
-  --daybar-text: #0b3d91; /* navy blue for day header text */
+  --bg: #0b1020;         /* overall background */
+  --card: #11162a;       /* card-like containers */
+  --text: #e6e9f2;       /* main text color */
+  --accent: #0ea5e9;     /* buttons, highlights */
 }
 
 * {
@@ -97,12 +95,17 @@ ul#people li a {
   font-weight: 600;
 }
 
-/* ----- List view day headers ----- */
+/* ----- List view day headers (white bar, dark text) ----- */
 .fc .fc-list-day-cushion {
-  background: var(--daybar-bg) !important;   /* white */
-  color: var(--daybar-text) !important;     /* navy */
-  font-weight: 700;
-  font-size: 14px;
+  background: #ffffff !important;   /* white bar */
+  color: #0b3d91 !important;        /* dark navy text */
+  font-weight: 700 !important;
+  font-size: 14px !important;
+}
+
+.fc .fc-list-day-side-text {
+  color: #0b3d91 !important;        /* dark navy date text */
+  font-weight: 600 !important;
 }
 
 .fc .fc-list-day {
